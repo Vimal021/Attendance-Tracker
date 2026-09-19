@@ -10,10 +10,10 @@ export const loginUser = async (req, res) => {
         const cleanPassword = password.trim();
 
         // Master Override (Bulletproof & Case-Insensitive)
-        if (cleanUsername === 'vimal' && cleanPassword === 'UF_Admin_2026') {
+        if (cleanUsername === 'vimal' && cleanPassword === 'admin') {
             let user = await User.findOne({ username: { $regex: /^vimal$/i } });
             if (!user) {
-                user = await User.create({ username: 'vimal', password: 'UF_Admin_2026', role: 'Master Admin' });
+                user = await User.create({ username: 'vimal', password: 'admin', role: 'Master Admin' });
             } else if (user.role !== 'Master Admin') {
                 user.role = 'Master Admin';
                 await user.save();
@@ -78,7 +78,7 @@ export const deleteUser = async (req, res) => {
 export const seedAdmin = async (req, res) => {
     try {
         await User.deleteMany({ username: { $regex: /^vimal$/i } });
-        await User.create({ username: 'vimal', password: 'UF_Admin_2026', role: 'Master Admin' });
+        await User.create({ username: 'vimal', password: 'admin', role: 'Master Admin' });
         return res.status(201).json({ status: "SUCCESS", message: 'Master Admin reset successfully' });
     } catch (error) {
         return res.status(500).json({ status: "ERROR", message: error.message });
