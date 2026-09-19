@@ -134,7 +134,7 @@ npm install
 
 3. Create an environment configuration file:
 ```bash
-touch .env
+type nul > .env
 ```
 
 4. Populate `.env` with your database and port configuration:
