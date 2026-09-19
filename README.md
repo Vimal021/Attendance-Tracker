@@ -114,8 +114,8 @@ Ensure you have installed the following software before proceeding:
 
 ### Step 1: Clone the Repository
 ```bash
-git clone [https://github.com/your-username/kishor-offset.git](https://github.com/your-username/kishor-offset.git)
-cd kishor-offset
+git clone https://github.com/Vimal021/Attendance-Tracker.git
+cd  Attendance-Tracker
 ```
 
 ---
