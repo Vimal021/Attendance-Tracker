@@ -4,14 +4,26 @@ A full-stack, internal business management platform built for **Kishor Offset** 
 
 ---
 
-## 📌 Project Overview
+## 🌟 What Makes Kishor Offset - Attendance & Payroll Management System Stand Out?
 
-This platform centralizes daily business operations for Kishor Offset by replacing manual tracking with a digital workflow:
-- **Employee Management:** Track and maintain active employee directories and records.
-- **Attendance Tracking:** Record check-ins, check-outs, and shifts with high precision.
-- **Salary & Advances:** Manage payroll distributions, advance approvals, and balance reconciliation.
-- **Role-Based Access Control (RBAC):** Restrict system views and sensitive administrative actions based on specific organizational roles.
-- **Secure Lightweight Auth:** Custom server-validated session tokens (`crypto.randomBytes`) verified directly against MongoDB to prevent client-side inspection or privilege tampering without JWT configuration complexity.
+Unlike generic attendance tracking templates, this system is customized for real-world print press manufacturing workflows:
+
+- **📅 Interactive Full-Month Grid Matrix:** Visual month-at-a-glance attendance grid where admins can track complete monthly attendance (Present, Absent, Half-Day, Overtime) for every single worker simultaneously without toggling daily lists.
+- **⚡ Real-Time Attendance Status Badges:** Dynamic color-coded markers for fast identification of attendance patterns, missing logs, or late arrivals across shifts.
+- **💰 Integrated Salary Advance & Deduction Engine:** Tracks advance payments on the fly, automatically deducting them during month-end payroll settlement to prevent reconciliation discrepancies.
+- **🔒 Tamper-Proof Session Tokens (No-JWT Vulnerability):** Replaced client-side role reliance and inspect-element vulnerabilities with server-generated random crypto session tokens validated against MongoDB on every request.
+- **🏢 Tailored Role Workspaces:** Zero UI clutter—Accountants are routed straight to ledger tools (`/accountant`), workers see only essential status cards, and Master Admins retain full operational controls.
+- **📶 Local Network / Production Hybrid Support:** Auto-detects whether the client is connecting via localhost, workshop Wi-Fi IP, or a cloud production server for seamless cross-device terminal punching.
+
+---
+
+## 📌 Core Features
+
+- **Employee Directory:** Manage records, designations, wages, and active/inactive employment states.
+- **Automated Time & Attendance:** Punch-in/punch-out handling with overtime calculations and monthly summaries.
+- **Payroll Ledger:** Automated monthly salary disbursement calculations with deduction history.
+- **Role-Based Access Control (RBAC):** Restrict system endpoints across Master Admin, Admin, Manager, Accountant, and Staff tiers.
+- **Bulletproof Auth:** Secure passwords hashed with `bcryptjs` and session tokens stored in database documents.
 
 ---
 
@@ -19,16 +31,16 @@ This platform centralizes daily business operations for Kishor Offset by replaci
 
 ### Frontend
 - **Framework:** React.js (Vite)
-- **Styling:** Bootstrap & Custom CSS
+- **Styling:** Bootstrap & Custom Responsive CSS
 - **Icons:** Lucide React
-- **HTTP Client:** Axios (configured with automated request headers)
+- **HTTP Client:** Axios (custom interceptor with dynamic headers)
 - **Routing:** React Router DOM
 
 ### Backend
 - **Runtime:** Node.js
 - **Framework:** Express.js
 - **Database:** MongoDB (via Mongoose ODM)
-- **Authentication:** Custom Session Tokens (`crypto`), bcryptjs for password hashing
+- **Authentication:** Opaque random crypto session tokens, bcryptjs password hashing
 - **Environment Management:** dotenv
 
 ---
@@ -43,7 +55,7 @@ The system uses structured access levels across the organization:
 | **Admin** | Full operational management, attendance modifications, and payroll overview |
 | **Manager** | Oversees employee assignments and daily attendance tracking |
 | **Accountant** | Dedicated access to `/accountant` workspace for salary and advance disbursements |
-| **Office Staff / Regular Staff** | Standard views for checking operational statuses and logs |
+| **Office Staff / Regular Staff** | Standard views for checking operational statuses and personal logs |
 
 ---
 
@@ -94,7 +106,7 @@ Follow these instructions to set up the project locally for development and prod
 
 Ensure you have installed the following software before proceeding:
 - **Node.js**: Version `v18.0.0` or higher
-- **npm**: Version `v9.0.0` or higher (comes bundled with Node.js)
+- **npm**: Version `v9.0.0` or higher (bundled with Node.js)
 - **MongoDB**: A running local instance on port `27017` or an active MongoDB Atlas connection URI
 - **Git**: Installed and configured on your local machine
 
@@ -182,7 +194,7 @@ http://localhost:5173
 
 ### Operations
 - `/api/employees` — Employee CRUD and profile details
-- `/api/attendance` — Shift logs, check-ins, and daily punch cards
+- `/api/attendance` — Shift logs, check-ins, monthly grid summaries, and daily punch cards
 - `/api/salary` — Advance allocations and payroll records
 
 ---
