@@ -1,0 +1,116 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --uf-unsaved: #ffffff;
+  --uf-present: #fff9db;
+  --uf-absent: #ffe3e3;
+  --uf-holiday: #e7f5ff;
+  --uf-past-present: #d3f9d8;
+}
+
+body {
+  background-color: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Card State Animations & Transitions */
+.attendance-card {
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.state-unsaved {
+  background-color: var(--uf-unsaved);
+}
+
+.state-present {
+  background-color: var(--uf-present);
+}
+
+.state-absent {
+  background-color: var(--uf-absent);
+}
+
+.state-holiday {
+  background-color: var(--uf-holiday);
+}
+
+.state-past-present {
+  background-color: var(--uf-past-present);
+}
+
+.leaved-employee {
+  background-color: #e9ecef !important;
+  opacity: 0.65;
+  color: #6c757d;
+}
+
+/* Desktop Statement Container Wrapper Layout Constraints */
+.desktop-centered-ledger {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Calendar Matrix Visual Styling Blocks */
+.calendar-grid-cell {
+  min-height: 85px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.calendar-grid-cell:hover {
+  transform: scale(1.02);
+}
+
+/* Strict A4 Print Formatting Stylesheet Overrides */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12px !important;
+  }
+
+  .no-print,
+  .navbar,
+  button,
+  .btn,
+  .hamburger-menu,
+  .menu-btn,
+  input,
+  select {
+    display: none !important;
+  }
+
+  .print-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .print-page-break {
+    page-break-after: always !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 20px !important;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+    padding: 6px !important;
+  }
+
+  th {
+    background-color: #f2f2f2 !important;
+  }
+}
