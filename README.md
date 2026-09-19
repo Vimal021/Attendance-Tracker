@@ -179,7 +179,7 @@ npm run dev
 
 5. Access the application in your browser:
 ```text
-http://localhost:5173
+http://localhost:3000
 ```
 
 ---
