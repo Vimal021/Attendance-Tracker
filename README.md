@@ -141,6 +141,7 @@ type nul > .env
 ```env
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/kishor_offset
+JWT_SECRET=YOUR_SECRET_KEY
 ```
 
 5. Launch the backend server:
