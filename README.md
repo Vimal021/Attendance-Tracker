@@ -4,7 +4,7 @@ A full-stack, internal business management platform built for **Kishor Offset** 
 
 ---
 
-## 🌟 What Makes Kishor Offset - Attendance & Payroll Management System Stand Out?
+## 🌟 What Makes Kishor Offset - Attendance & Payroll Management System Different?
 
 Unlike generic attendance tracking templates, this system is customized for real-world print press manufacturing workflows:
 
